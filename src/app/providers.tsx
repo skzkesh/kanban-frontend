@@ -1,21 +1,10 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import type { ReactNode } from "react";
 
-// Create a single QueryClient instance for the whole app
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+type ProvidersProps = {
+  children: ReactNode;
+};
 
-export function Providers() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  );
+export function Providers({ children }: ProvidersProps) {
+  return <>{children}</>;
 }
+
