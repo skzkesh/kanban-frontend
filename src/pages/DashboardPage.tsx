@@ -1,8 +1,12 @@
+import { DashboardLayout } from '../components/DashboardLayout';
+
 function DashboardPage() {
   return (
-    <div className="p-8">
-      Dashboard Page
-    </div>
+    <DashboardLayout>
+      <div className="">
+        
+      </div>
+    </DashboardLayout>
   );
 }
 
