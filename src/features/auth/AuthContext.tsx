@@ -1,3 +1,5 @@
+const DEV_MODE = import.meta.env.DEV; 
+
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +13,7 @@ type User = {
 type AuthContextType = {
   user: User | null;
   isAuthenticated: boolean;
+  isAuthReady: boolean;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
 };
@@ -28,6 +31,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthReady, setIsAuthReady] = useState(false);
+
 
   /**
    * On app load:
@@ -45,6 +50,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       });
       setIsAuthenticated(true);
     }
+    else if (DEV_MODE) {
+      setUser({ id: "1", email: "dev@kanban.com" });
+      setIsAuthenticated(true);
+    }
+    setIsAuthReady(true);
   }, []);
 
   /**
@@ -86,6 +96,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const value: AuthContextType = {
     user,
     isAuthenticated,
+    isAuthReady,
     login,
     logout,
   };

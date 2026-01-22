@@ -8,8 +8,12 @@ type ProtectedRouteProps = {
 };
 
 export function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAuthReady } = useAuth();
 
+  if (!isAuthReady) {
+    return null;
+  }
+  
   if (!isAuthenticated) {
     // Not logged in → redirect to login
     return <Navigate to="/login" replace />;
