@@ -14,7 +14,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         logout();
     }
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen min-w-screen flex flex-col bg-white">
         {/* Header */}
         <header className=" p-3 flex justify-between items-center shadow">
             <h1 className="ml-2 text-l">Kanban</h1>
@@ -33,9 +33,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         </header>
 
         {/* Main content */}
-        <main className="flex-1 p-4 bg-gray-50">
-            {children}
-        </main>
+        {children}
         </div>
     );
 }

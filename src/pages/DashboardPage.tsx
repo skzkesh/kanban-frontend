@@ -1,11 +1,12 @@
 import { DashboardLayout } from '../components/DashboardLayout';
+import { BoardPage } from '../components/BoardPage/Board';
 
 function DashboardPage() {
   return (
     <DashboardLayout>
-      <div className="">
-        
-      </div>
+      <BoardPage>
+      </BoardPage>
+
     </DashboardLayout>
   );
 }
