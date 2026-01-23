@@ -1,13 +1,13 @@
 import type { Task } from "../../types/task";
 
 type TaskCardProps = {
-    title: string;
+    task: Task;
 }
 
-export function TaskCard({title}: TaskCardProps) {
+export function TaskCard({task}: TaskCardProps) {
     return (
         <div className="bg-white p-4 rounded-lg shadow-md mb-2">
-            <h3 className="">{title}</h3>
+            <h3 className="">{task.title}</h3>
         </div>
     );
 }

@@ -1,25 +1,92 @@
-import type { ReactNode } from "react";
 import { Column } from "./Column";
+
 import type { Board } from "../../types/board";
 
-type BoardPageProps = {
-    children: ReactNode;
-}
+/**
+ * Temporary mock data (simulates backend response)
+ */
+const mockData: Board = {
+  id: "1",
+  title: "Kanban Board",
+  ownerId: "1",
+  createdAt: "today",
+  updatedAt: "today",
+  columns: [
+    {
+      id: "1",
+      title: "To Do",
+      order: 1,
+      tasks: [
+        {
+          id: "1",
+          title: "Task 1",
+          description: "Description for Task 1",
+          order: 1,
+          createdAt: "today",
+        },
+        {
+          id: "2",
+          title: "Task 2",
+          description: "Description for Task 2",
+          order: 2,
+          createdAt: "today",
+        },
+      ],
+    },
+    {
+      id: "2",
+      title: "In Progress",
+      order: 2,
+      tasks: [
+        {
+          id: "3",
+          title: "Task 3",
+          description: "Description for Task 3",
+          order: 1,
+          createdAt: "today",
+        },
+      ],
+    },
+    {
+      id: "3",
+      title: "Done",
+      order: 3,
+      tasks: [
+        {
+          id: "4",
+          title: "Task 4",
+          description: "Description for Task 4",
+          order: 1,
+          createdAt: "today",
+        },
+      ],
+    },
+  ],
+};
 
 export function BoardPage() {
-    return (
-        <div className="w-full flex items-center justify-center bg-white overflow-auto">
-            { /* Board Container */}
-            <div className="w-full max-w-6xl mx-auto"> 
-                {/* Board Title */}
-                <h1 className="flex justify-center py-3 text-2xl font-medium">Kanban Board</h1>
-                { /* Columns Container */}
-                <div className="flex gap-6 justify-center py-2">
-                    <Column title="To Do" />
-                    <Column title="In Progress" />
-                    <Column title="Done" />
-                </div>
-            </div>
+  const board = mockData;
+
+  return (
+    <div className="w-full flex justify-center bg-white overflow-auto">
+      {/* Board Container */}
+      <div className="w-full max-w-6xl mx-auto p-6">
+        {/* Board Title */}
+        <h1 className="text-2xl font-medium mb-6 text-center">
+          {board.title}
+        </h1>
+
+        {/* Columns Container */}
+        <div className="flex gap-6">
+          {board.columns.map((column) => (
+            <Column
+              key={column.id}
+              title={column.title}
+              tasks={column.tasks}
+            />
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
