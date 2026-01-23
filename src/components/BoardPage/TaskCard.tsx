@@ -1,3 +1,5 @@
+import type { Task } from "../../types/task";
+
 type TaskCardProps = {
     title: string;
 }

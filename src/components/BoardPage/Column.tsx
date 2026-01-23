@@ -1,4 +1,5 @@
 import { TaskCard } from "./TaskCard";
+import type { Column as ColumnType } from "../../types/column";
 
 type ColumnProps = {
     title: string;

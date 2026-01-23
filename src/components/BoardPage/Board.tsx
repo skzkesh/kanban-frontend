@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Column } from "./Column";
+import type { Board } from "../../types/board";
 
 type BoardPageProps = {
     children: ReactNode;
