@@ -6,6 +6,6 @@ type SignupTitleProps = {
 
 export function SignupTitle({children}: SignupTitleProps){
     return (
-        <div className="text-center text-3xl font-medium mt-3">{children}</div>
+        <div className="text-center text-3xl font-medium my-3">{children}</div>
     );
 }
