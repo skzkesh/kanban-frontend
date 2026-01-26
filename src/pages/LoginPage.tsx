@@ -4,6 +4,7 @@ import { SignupLayout } from '../components/SignupLayout';
 import { CardContainer } from '../components/Signup/CardContainer';
 import { SignupTitle } from '../components/Signup/Title';
 import { InputField } from '../components/Signup/InputField';
+import { SubmitButton } from '../components/Signup/SubmitButton';
 
 function LoginPage() {
     const [email, setEmail] = useState<string>('');
@@ -34,6 +35,9 @@ function LoginPage() {
             value={password} 
             placeholder='Enter password'
             onChange={handlePasswordChange} 
+          />
+          <SubmitButton 
+            text='Login'
           />
         </CardContainer>
       </SignupLayout>
