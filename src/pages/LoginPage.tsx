@@ -22,7 +22,7 @@ function LoginPage() {
     };
 
     const handleSignupRoute = () => {
-      navigate("/signup");
+      navigate("/register");
     }
 
     return (
