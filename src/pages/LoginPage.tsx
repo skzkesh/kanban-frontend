@@ -1,8 +1,11 @@
 import { SignupLayout } from '../components/SignupLayout';
+import { CardContainer } from '../components/Signup/CardContainer';
 
 function LoginPage() {
     return (
-      <SignupLayout>Hi</SignupLayout>
+      <SignupLayout>
+        <CardContainer>Hi</CardContainer>
+      </SignupLayout>
   );
 }
 
