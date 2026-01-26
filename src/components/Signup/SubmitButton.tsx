@@ -1,8 +1,7 @@
 import React from 'react';
 
-// Define props interface
 interface SubmitButtonProps {
-    text: string; // Define the expected 'text' prop
+    text: string;
 }
 
 export const SubmitButton: React.FC<SubmitButtonProps> = ({ text }) => {

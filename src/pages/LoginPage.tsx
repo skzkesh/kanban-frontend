@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import { SignupLayout } from '../components/SignupLayout';
 import { CardContainer } from '../components/Signup/CardContainer';
 import { SignupTitle } from '../components/Signup/Title';
 import { InputField } from '../components/Signup/InputField';
 import { SubmitButton } from '../components/Signup/SubmitButton';
+import { AlternativeText } from '../components/Signup/AlternativeText';
 
 function LoginPage() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>(''); 
+    const navigate = useNavigate();
 
     const handleEmailChange = (value: string) => {
         setEmail(value);
@@ -17,6 +20,10 @@ function LoginPage() {
     const handlePasswordChange = (value: string) => {
         setPassword(value);
     };
+
+    const handleSignupRoute = () => {
+      navigate("/signup");
+    }
 
     return (
       <SignupLayout>
@@ -38,6 +45,11 @@ function LoginPage() {
           />
           <SubmitButton 
             text='Login'
+          />
+          <AlternativeText
+            text="Don't have an account? "
+            signupText="Sign Up"
+            onClick={handleSignupRoute}
           />
         </CardContainer>
       </SignupLayout>
