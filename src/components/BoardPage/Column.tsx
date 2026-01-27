@@ -9,14 +9,14 @@ type ColumnProps = {
 
 export function Column({ title, tasks }: ColumnProps) {
     return (
-        <div className="w-72 bg-gray-400 justify-center flex flex-col rounded-lg">
+        <div className="w-72 bg-gray-400 justify-center flex-col rounded-lg">
             {/* Column Title */}
             <h2 className="font-medium my-3 justify-center flex">{title}</h2>
             {/* Task List */}
             <div className="flex flex-col gap-3 p-2">
                 {
                     tasks.map((task) => (
-                        <TaskCard key={task.id} task={task} />
+                        <TaskCard key={task.id} task={task} label={task.label}/>
                     ))
                 }
             </div>

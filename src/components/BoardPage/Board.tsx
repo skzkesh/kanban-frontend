@@ -23,6 +23,10 @@ const mockData: Board = {
           description: "Description for Task 1",
           order: 1,
           createdAt: "today",
+          label: {
+            label: 'waiting',
+            color: 'black',
+          }
         },
         {
           id: "2",
@@ -30,6 +34,10 @@ const mockData: Board = {
           description: "Description for Task 2",
           order: 2,
           createdAt: "today",
+          label: {
+            label: 'waiting',
+            color: 'black',
+          }
         },
       ],
     },
@@ -44,6 +52,10 @@ const mockData: Board = {
           description: "Description for Task 3",
           order: 1,
           createdAt: "today",
+          label: {
+            label: 'waiting',
+            color: 'black',
+          }
         },
       ],
     },
@@ -58,6 +70,10 @@ const mockData: Board = {
           description: "Description for Task 4",
           order: 1,
           createdAt: "today",
+          label: {
+            label: 'waiting',
+            color: 'black',
+          }
         },
       ],
     },
@@ -77,7 +93,7 @@ export function BoardPage() {
         </h1>
 
         {/* Columns Container */}
-        <div className="flex gap-6">
+        <div className="flex gap-6 justify-center">
           {board.columns.map((column) => (
             <Column
               key={column.id}
