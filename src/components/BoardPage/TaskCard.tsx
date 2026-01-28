@@ -3,7 +3,7 @@ import type { Status } from '../../types/status';
 
 type TaskCardProps = {
     task: Task;
-    label: Status;
+    label?: Status;
 }
 
 export function TaskCard({task}: TaskCardProps) {

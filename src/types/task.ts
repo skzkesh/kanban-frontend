@@ -2,6 +2,7 @@ import type { Status } from './status';
 
 export type Task = {
     id: string;
+    columnId: string;
     title: string;
     description?: string;
     order: number;

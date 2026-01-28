@@ -1,4 +1,5 @@
 import type { Column } from './column';
+import type { Task } from './task';
 
 export type Board = {
     id: string;
@@ -7,4 +8,5 @@ export type Board = {
     createdAt: string;
     updatedAt: string;
     columns: Column[];
+    tasks: Task[];
 }
