@@ -1,16 +1,29 @@
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import type { Task } from "../../types/task";
-import type { Status } from '../../types/status';
 
 type TaskCardProps = {
-    task: Task;
-    label?: Status;
-}
+  task: Task;
+};
 
-export function TaskCard({task}: TaskCardProps) {
-    return (
-        <div className="bg-white p-4 rounded-lg shadow-md mb-2">
-            
-            <h3 className="">{task.title}</h3>
-        </div>
-    );
+export function TaskCard({ task }: TaskCardProps) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: task.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      {...attributes}
+      {...listeners}
+      style={style}
+      className="bg-white p-3 rounded shadow"
+    >
+      {task.title}
+    </div>
+  );
 }
