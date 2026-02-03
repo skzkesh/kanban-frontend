@@ -3,10 +3,10 @@ interface StatusProps {
     color: string;
 }
 
-export function Status({ color, label }: StatusProps){
+export function Status({ color, label }: StatusProps) {
     return (
         <span 
-            className="inline-block text-white px-3 py-1 rounded-md m-1" 
+            className="inline-flex w-1/3 items-center justify-center h-4 text-white text-xs px-3 py-1 mb-2 rounded-xl"
             style={{ backgroundColor: color }}
         >
             {label}

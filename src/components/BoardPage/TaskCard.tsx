@@ -1,3 +1,4 @@
+import { Status } from './Status';
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import type { Task } from "../../types/task";
@@ -23,7 +24,10 @@ export function TaskCard({ task }: TaskCardProps) {
       style={style}
       className="bg-white p-3 rounded shadow"
     >
-      {task.title}
+      <div className="flex flex-col">
+        <Status color="red" label="pending"/>
+        {task.title}
+      </div>
     </div>
   );
 }
