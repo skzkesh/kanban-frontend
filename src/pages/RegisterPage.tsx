@@ -6,11 +6,14 @@ import { CardContainer } from '../components/Signup/CardContainer';
 import { SignupTitle } from '../components/Signup/Title';
 import { InputField } from '../components/Signup/InputField';
 import { SubmitButton } from '../components/Signup/SubmitButton';
+import { ErrorMessage } from '../components/Signup/ErrorMessage';
 import { AlternativeText } from '../components/Signup/AlternativeText';
 
 function RegisterPage() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>(''); 
+  const [errorMessage, setErrorMessage] = useState<string>(''); 
+  const error = "This is error";
   const navigate = useNavigate();
 
   const handleEmailChange = (value: string) => {
@@ -46,6 +49,7 @@ function RegisterPage() {
         <SubmitButton 
           text='Sign Up'
         />
+        <ErrorMessage message={errorMessage}/>
         <AlternativeText
           text="Already have an account? "
           signupText="Login"

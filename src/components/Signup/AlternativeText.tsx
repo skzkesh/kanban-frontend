@@ -6,7 +6,7 @@ interface AlternativeTextProps {
 
 export const AlternativeText: React.FC<AlternativeTextProps> = ({ text,  signupText, onClick }) => {
     return (
-        <div className="flex justify-center pt-5 font-sm">
+        <div className="flex justify-center pt-3 text-sm">
             <p>
                 {text}
                 <span
