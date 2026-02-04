@@ -9,12 +9,13 @@ type ColumnProps = {
     title: string;
   };
   tasks: Task[];
+  onAddTaskClick: (columnId: string) => void;
 };
 
-export function Column({ column, tasks }: ColumnProps) {
-    const handleAddTask = () => {
-        
-    }
+export function Column({ column, tasks, onAddTaskClick }: ColumnProps) {
+  const handleAddTask = () => {
+    onAddTaskClick(column.id);
+  };
   return (
     <div className="w-72 bg-gray-200 rounded flex flex-col p-3">
       <h2 className="text-center font-medium mb-3">{column.title}</h2>
@@ -30,9 +31,7 @@ export function Column({ column, tasks }: ColumnProps) {
         </div>
       </SortableContext>
       <div className="mt-auto">
-          <AddButton onClick={handleAddTask}>
-
-      </AddButton>
+        <AddButton onClick={handleAddTask} />
       </div>
     </div>
   );

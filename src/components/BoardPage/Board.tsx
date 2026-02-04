@@ -28,7 +28,11 @@ const mockData: Board = {
   ],
 };
 
-export function BoardPage() {
+type BoardPageProps = {
+  onAddTaskClick: (columnId: string) => void;
+};
+
+export function BoardPage({ onAddTaskClick }: BoardPageProps) {
   const [tasks, setTasks] = useState(mockData.tasks);
   const board = mockData;
 
@@ -70,7 +74,11 @@ export function BoardPage() {
                   items={columnTasks.map((t) => t.id)}
                   strategy={verticalListSortingStrategy}
                 >
-                  <Column column={column} tasks={columnTasks} />
+                  <Column
+                    column={column}
+                    tasks={columnTasks}
+                    onAddTaskClick={onAddTaskClick}
+                  />
                 </SortableContext>
               );
             })}
