@@ -6,11 +6,14 @@ import { CardContainer } from '../components/Signup/CardContainer';
 import { SignupTitle } from '../components/Signup/Title';
 import { InputField } from '../components/Signup/InputField';
 import { SubmitButton } from '../components/Signup/SubmitButton';
+import { ErrorMessage } from '../components/Signup/ErrorMessage';
 import { AlternativeText } from '../components/Signup/AlternativeText';
 
 function LoginPage() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>(''); 
+    const [errorMessage, setErrorMessage] = useState<string>(''); 
+
     const navigate = useNavigate();
 
     const handleEmailChange = (value: string) => {
@@ -46,6 +49,7 @@ function LoginPage() {
           <SubmitButton 
             text='Login'
           />
+          <ErrorMessage message={errorMessage}/>
           <AlternativeText
             text="Don't have an account? "
             signupText="Sign Up"

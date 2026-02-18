@@ -13,7 +13,7 @@ function RegisterPage() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>(''); 
   const [errorMessage, setErrorMessage] = useState<string>(''); 
-  const error = "This is error";
+
   const navigate = useNavigate();
 
   const handleEmailChange = (value: string) => {
@@ -28,7 +28,7 @@ function RegisterPage() {
     navigate("/login");
   }
   
-    return (
+  return (
     <SignupLayout>
       <CardContainer>
         <SignupTitle>Sign Up</SignupTitle>
